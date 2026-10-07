@@ -5,10 +5,21 @@
     align-items: center;
     overflow: hidden;
     border-bottom: 1px solid var(--line);
+    background: radial-gradient(ellipse at 50% 45%, rgb(255 239 0 / 4%), transparent 54%), #08090a;
+}
+
+.hero-particles {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .78;
+    pointer-events: none;
 }
 
 .hero-layout {
     position: relative;
+    z-index: 1;
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     justify-items: center;
