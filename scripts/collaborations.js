@@ -79,15 +79,15 @@
 
     const nameHeading = appendText(card, "h3", "collab-name", "");
     const linkUrl = safeUrl(collaboration.link);
+    nameHeading.textContent = collaboration.name;
     if (linkUrl) {
-      const link = appendText(nameHeading, "a", "", collaboration.name);
-      link.href = linkUrl;
+      const clickHint = appendText(nameHeading, "a", "card-click-hint", "کلیک کنید");
+      clickHint.href = linkUrl;
       if (/^https?:\/\//i.test(linkUrl)) {
-        link.target = "_blank";
-        link.rel = "noopener noreferrer";
+        clickHint.target = "_blank";
+        clickHint.rel = "noopener noreferrer";
       }
-    } else {
-      nameHeading.textContent = collaboration.name;
+      clickHint.setAttribute("aria-label", `مشاهده ${collaboration.name}`);
     }
 
     if (typeof collaboration.description === "string" && collaboration.description.trim()) {

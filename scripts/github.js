@@ -16,6 +16,8 @@
   });
   let repositoryMessages;
   let allRepositories = [];
+  const repositoryReadmeDescriptions = new Map();
+  const repositoryReadmeRequests = new Map();
   let sortMode = "stars";
   let isLoading = false;
   repoSorter.dataset.sort = sortMode;
@@ -26,6 +28,72 @@
     element.textContent = text;
     parent.append(element);
     return element;
+  }
+
+  function summarizeReadme(markdown) {
+    const sections = markdown
+      .replace(/^---\s*[\s\S]*?\n---\s*/m, "")
+      .replace(/```[\s\S]*?```/g, "")
+      .replace(/<!--[\s\S]*?-->/g, "")
+      .split(/\n\s*\n/);
+
+    for (const section of sections) {
+      const summary = section
+        .split("\n")
+        .map((line) => line.trim())
+        .filter((line) => line && !/^#{1,6}\s/.test(line))
+        .join(" ")
+        .replace(/!\[[^\]]*]\([^)]*\)/g, "")
+        .replace(/\[([^\]]+)]\([^)]*\)/g, "$1")
+        .replace(/<[^>]*>/g, "")
+        .replace(/[*_`~]/g, "")
+        .replace(/\s+/g, " ")
+        .trim();
+
+      if (summary) {
+        return summary.length > 240 ? `${summary.slice(0, 237).trimEnd()}…` : summary;
+      }
+    }
+
+    return "";
+  }
+
+  function loadReadmeDescription(repository) {
+    const repositoryName = repository.full_name;
+    if (repositoryReadmeDescriptions.has(repositoryName)) {
+      return Promise.resolve(repositoryReadmeDescriptions.get(repositoryName));
+    }
+    if (repositoryReadmeRequests.has(repositoryName)) {
+      return repositoryReadmeRequests.get(repositoryName);
+    }
+
+    const requestUrl = new URL(
+      `/repos/${repositoryName.split("/").map(encodeURIComponent).join("/")}/readme`,
+      "https://api.github.com"
+    );
+    const request = fetch(requestUrl, {
+      headers: { Accept: "application/vnd.github+json" }
+    }).then(async (response) => {
+      if (response.status === 404) return "";
+      if (!response.ok) {
+        throw new Error(`GitHub README API returned ${response.status}`);
+      }
+
+      const readme = await response.json();
+      if (readme.encoding !== "base64" || typeof readme.content !== "string") {
+        throw new Error(`GitHub returned an unexpected README for ${repositoryName}.`);
+      }
+
+      const binary = atob(readme.content.replace(/\s/g, ""));
+      const bytes = Uint8Array.from(binary, (character) => character.charCodeAt(0));
+      return summarizeReadme(new TextDecoder().decode(bytes));
+    }).then((summary) => {
+      repositoryReadmeDescriptions.set(repositoryName, summary);
+      return summary;
+    });
+
+    repositoryReadmeRequests.set(repositoryName, request);
+    return request;
   }
 
   function setRepositoryListExpanded(expanded) {
@@ -62,17 +130,28 @@
     appendText(top, "span", "repo-visibility", "عمومی");
     card.append(top);
 
-    const nameHeading = appendText(card, "h3", "repo-name", "");
-    const nameLink = appendText(nameHeading, "a", "", repository.name);
-    nameLink.href = repository.html_url;
-    nameLink.target = "_blank";
-    nameLink.rel = "noopener noreferrer";
-    appendText(
+    const nameHeading = appendText(card, "h3", "repo-name", repository.name);
+    const clickHint = appendText(nameHeading, "a", "card-click-hint", "کلیک کنید");
+    clickHint.href = repository.html_url;
+    clickHint.target = "_blank";
+    clickHint.rel = "noopener noreferrer";
+    clickHint.setAttribute("aria-label", `مشاهده مخزن ${repository.name}`);
+    const description = appendText(
       card,
       "p",
       "repo-description",
       repository.description || repositoryMessages.repositoryDescriptionFallback
     );
+    description.dataset.repositoryDescription = repository.full_name;
+    if (!repository.description) {
+      loadReadmeDescription(repository).then((summary) => {
+        if (description.isConnected) {
+          description.textContent = summary || repositoryMessages.repositoryDescriptionFallback;
+        }
+      }).catch((error) => {
+        console.error(`Could not load README description for ${repository.full_name}:`, error);
+      });
+    }
 
     const meta = document.createElement("div");
     meta.className = "repo-meta";

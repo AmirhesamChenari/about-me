@@ -102,6 +102,10 @@
     box-shadow: 0 5px 16px rgb(0 0 0 / 28%);
 }
 .collab-name {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
     margin: 14px 0 6px;
     color: var(--text);
     font-size: 16px;

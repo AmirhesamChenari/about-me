@@ -258,6 +258,10 @@
 .repo-name {
     position: relative;
     z-index: 1;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
     margin: 27px 0 8px;
     overflow-wrap: anywhere;
     color: var(--text);
@@ -265,11 +269,42 @@
     direction: ltr;
     text-align: right;
 }
-.repo-name a {
-    transition: color .2s;
-}
-.repo-name a:hover {
+.card-click-hint {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 0;
+    min-height: 30px;
+    flex: 0 0 auto;
+    padding: 0;
+    overflow: hidden;
+    border: 0 solid transparent;
+    border-radius: 5px;
     color: var(--yellow);
+    font: 500 12px/1.5 var(--font);
+    direction: rtl;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(3px);
+    visibility: hidden;
+    transition: max-width .25s ease, padding .25s ease, border-width .25s ease, border-color .25s ease, opacity .25s ease, transform .25s ease, visibility .25s ease;
+}
+.repo-card:hover .card-click-hint,
+.repo-card:focus-within .card-click-hint,
+.collab-card:hover .card-click-hint,
+.collab-card:focus-within .card-click-hint {
+    max-width: 90px;
+    padding: 4px 10px;
+    border-width: 1px;
+    border-color: rgb(255 239 0 / 22%);
+    opacity: .72;
+    transform: translateY(0);
+    visibility: visible;
+}
+.card-click-hint:hover,
+.card-click-hint:focus-visible {
+    opacity: 1 !important;
+    color: #fff59d;
 }
 .repo-description {
     min-height: 42px;
