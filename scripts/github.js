@@ -163,8 +163,8 @@
       meta.append(language);
     }
 
-    appendText(meta, "span", "", `★ ${numberFormatter.format(repository.stargazers_count)}`);
-    appendText(meta, "span", "", `⑂ ${numberFormatter.format(repository.forks_count)}`);
+    appendText(meta, "span", "repo-stat", `★ ${numberFormatter.format(repository.stargazers_count)}`);
+    appendText(meta, "span", "repo-stat", `⑂ ${numberFormatter.format(repository.forks_count)}`);
     appendText(meta, "span", "repo-updated", `به‌روزرسانی ${dateFormatter.format(new Date(repository.updated_at))}`);
     card.append(meta);
     targetGrid.append(card);
