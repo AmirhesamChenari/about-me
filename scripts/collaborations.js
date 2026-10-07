@@ -123,15 +123,22 @@
       const collaborations = Object.values(data).filter((item) =>
         item &&
         typeof item === "object" &&
+        item.enabled !== false &&
         typeof item.name === "string" &&
         item.name.trim()
       );
 
       if (collaborations.length === 0) {
+        collabGrid.replaceChildren();
+        collabGridMore.replaceChildren();
+        collabToggle.hidden = true;
+        setCollaborationListExpanded(false);
+        collabStatus.classList.add("is-empty");
         collabStatus.textContent = messages.emptyMessage;
         return;
       }
 
+      collabStatus.classList.remove("is-empty");
       collabGrid.replaceChildren();
       collabGridMore.replaceChildren();
       collaborations.forEach((collaboration, index) => {
@@ -142,6 +149,7 @@
       setCollaborationListExpanded(false);
       collabStatus.textContent = `${countFormatter.format(collaborations.length)} همکاری`;
     } catch (error) {
+      collabStatus.classList.remove("is-empty");
       collabStatus.textContent =
         messages?.loadErrorMessage || "اطلاعات همکاری‌ها بارگذاری نشد.";
       console.error("Could not load collaboration data:", error);

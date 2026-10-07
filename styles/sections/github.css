@@ -19,24 +19,23 @@
     align-items: center;
     gap: 13px;
 }
-.github-mark {
-    width: 38px;
-    height: 38px;
-    display: grid;
-    place-items: center;
-    border: 1px solid #454b46;
-    border-radius: 50%;
-    color: var(--yellow);
-    font: 10px Arial, sans-serif;
-    box-shadow: 0 0 18px rgb(255 239 0 / 8%);
-}
-.github-profile strong, .github-profile small {
+.github-profile-copy strong,
+.github-profile-copy small {
     display: block;
 }
-.github-profile strong {
+.github-profile-copy .github-profile-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     font: 14px Arial, sans-serif;
     direction: ltr;
     text-align: right;
+}
+.github-profile-icon {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 auto;
+    fill: currentColor;
 }
 .github-profile small {
     margin-top: 3px;
@@ -106,6 +105,23 @@
     margin: 0 0 12px;
     color: #a0a7a2;
     font-size: 12px;
+}
+.repo-panel {
+    padding: 20px;
+    border: 1px solid #292e2b;
+    border-radius: 7px;
+    background: linear-gradient(145deg, #101313 0%, #0b0d0e 68%);
+    box-shadow: inset 0 1px rgb(255 255 255 / 3%), 0 10px 26px rgb(0 0 0 / 12%);
+}
+#repo-status.is-empty {
+    min-height: 150px;
+    display: grid;
+    place-items: center;
+    margin: 0;
+    padding: 20px;
+    color: #aeb5af;
+    font-size: 14px;
+    text-align: center;
 }
 .repo-status a {
     color: var(--yellow);

@@ -136,6 +136,7 @@
   async function loadRepositories() {
     if (!repoGrid || !repoGridMore || !repoStatus || !repoToggle || !repoContent || !repoRefresh || isLoading) return;
     isLoading = true;
+    repoStatus.classList.remove("is-empty");
     repoRefresh.disabled = true;
     repoRefresh.setAttribute("aria-busy", "true");
 
@@ -179,13 +180,21 @@
       allRepositories = repositories.filter((repository) => !repository.fork);
 
       if (allRepositories.length === 0) {
+        repoGrid.replaceChildren();
+        repoGridMore.replaceChildren();
+        repoSorter.hidden = true;
+        repoToggle.hidden = true;
+        setRepositoryListExpanded(false);
+        repoStatus.classList.add("is-empty");
         repoStatus.textContent = repositoryMessages.emptyMessage;
         return;
       }
 
+      repoStatus.classList.remove("is-empty");
       repoSorter.hidden = false;
       renderRepositories();
     } catch (error) {
+      repoStatus.classList.remove("is-empty");
       repoStatus.textContent =
         repositoryMessages?.loadErrorMessage ||
         "دریافت مخزن‌ها انجام نشد؛ می‌توانی صفحه گیت‌هاب را باز کنی.";
