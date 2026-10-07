@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="fa" dir="rtl">
+<html lang="fa" dir="rtl" class="site-settings-loading">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#08090a">
   <meta name="description" content="وب‌سایت شخصی امیرحسام چناری، تقدیر؛ فعال در حوزه نرم‌افزار، طراحی وب و ربات.">
-  <title>امیرحسام چناری — تقدیر</title>
+  <title>Taghdir-Me</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -121,11 +121,11 @@
             <span>همکاری‌ها</span>
           </div>
           <div class="section-body reveal">
-            <p class="section-eyebrow">فرصت‌های همکاری</p>
-            <h2>برای همکاری آماده‌ام<span class="accent-dot">.</span></h2>
+            <p class="section-eyebrow" data-site-setting="content.collaborations.eyebrow">فرصت‌های همکاری</p>
+            <h2><span data-site-setting="content.collaborations.title">برای همکاری آماده‌ام</span><span class="accent-dot">.</span></h2>
           </div>
         </div>
-        <p class="repo-status" id="collab-status" role="status" aria-live="polite">در حال بارگذاری همکاری‌ها…</p>
+        <p class="repo-status" id="collab-status" role="status" aria-live="polite" data-site-setting="content.collaborations.loadingMessage">در حال بارگذاری همکاری‌ها…</p>
         <div class="collab-disclosure">
           <div class="collab-grid" id="collab-grid" aria-label="همکاری‌ها"></div>
           <button type="button" class="disclosure-toggle" id="collab-toggle" aria-expanded="false" aria-controls="collab-content" aria-label="نمایش همکاری‌های بیشتر" hidden>
@@ -149,8 +149,8 @@
             <span>گیت‌هاب</span>
           </div>
           <div class="section-body reveal">
-            <p class="section-eyebrow">مخزن‌های عمومی</p>
-            <h2>مخزن‌های گیت‌هاب<span class="accent-dot">.</span></h2>
+            <p class="section-eyebrow" data-site-setting="content.github.eyebrow">مخزن‌های عمومی</p>
+            <h2><span data-site-setting="content.github.title">مخزن‌های گیت‌هاب</span><span class="accent-dot">.</span></h2>
             <p class="section-hint" data-site-setting="content.github.description">مرتب‌سازی بر اساس تعداد ستاره یا زمان به‌روزرسانی؛ حداکثر ۹ مخزن نمایش داده می‌شود.</p>
           </div>
         </div>
@@ -161,14 +161,14 @@
             <span class="external-arrow" aria-hidden="true">↗</span>
           </a>
           <div class="repo-toolbar-actions">
-            <span class="repo-source">دریافت زنده از گیت‌هاب</span>
+            <span class="repo-source" data-site-setting="content.github.sourceLabel">دریافت زنده از گیت‌هاب</span>
             <button class="repo-refresh" id="repo-refresh" type="button" aria-label="به‌روزرسانی فهرست مخزن‌ها">
               <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M16.5 7A7 7 0 0 0 4 5.2L2.5 7M2.5 7V3.5M2.5 7H6M3.5 13A7 7 0 0 0 16 14.8l1.5-1.8m0 0v3.5m0-3.5H14"/></svg>
               <span>به‌روزرسانی</span>
             </button>
           </div>
         </div>
-        <p class="repo-status" id="repo-status" role="status" aria-live="polite">در حال دریافت مخزن‌ها…</p>
+        <p class="repo-status" id="repo-status" role="status" aria-live="polite" data-site-setting="content.github.loadingMessage">در حال دریافت مخزن‌ها از گیت‌هاب…</p>
         <div class="repo-sorter" id="repo-sorter" role="group" aria-label="مرتب‌سازی مخزن‌ها" hidden>
           <button type="button" class="repo-sort-button" data-repo-sort="stars" aria-pressed="true">بیشترین ستاره</button>
           <button type="button" class="repo-sort-button" data-repo-sort="recent" aria-pressed="false">جدیدترین‌ها</button>

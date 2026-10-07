@@ -14,6 +14,7 @@
   const repositoryIndexFormatter = new Intl.NumberFormat("fa-IR", {
     minimumIntegerDigits: 2
   });
+  let repositoryMessages;
   let allRepositories = [];
   let sortMode = "stars";
   let isLoading = false;
@@ -70,7 +71,7 @@
       card,
       "p",
       "repo-description",
-      repository.description || "برای این مخزن توضیحی ثبت نشده است."
+      repository.description || repositoryMessages.repositoryDescriptionFallback
     );
 
     const meta = document.createElement("div");
@@ -137,10 +138,19 @@
     isLoading = true;
     repoRefresh.disabled = true;
     repoRefresh.setAttribute("aria-busy", "true");
-    repoStatus.textContent = "در حال دریافت مخزن‌ها از گیت‌هاب…";
 
     try {
       const settings = await window.siteSettingsReady;
+      repositoryMessages = settings.content.github;
+      if (
+        typeof repositoryMessages.loadingMessage !== "string" ||
+        typeof repositoryMessages.emptyMessage !== "string" ||
+        typeof repositoryMessages.loadErrorMessage !== "string" ||
+        typeof repositoryMessages.repositoryDescriptionFallback !== "string"
+      ) {
+        throw new Error("Site settings must contain repository status messages.");
+      }
+      repoStatus.textContent = repositoryMessages.loadingMessage;
       const requestUrl = new URL(settings.github.repositoriesApiUrl);
       const query = new URLSearchParams(requestUrl.search);
       new URLSearchParams({
@@ -169,14 +179,16 @@
       allRepositories = repositories.filter((repository) => !repository.fork);
 
       if (allRepositories.length === 0) {
-        repoStatus.textContent = "مخزن عمومی‌ای برای نمایش پیدا نشد.";
+        repoStatus.textContent = repositoryMessages.emptyMessage;
         return;
       }
 
       repoSorter.hidden = false;
       renderRepositories();
     } catch (error) {
-      repoStatus.textContent = "دریافت مخزن‌ها انجام نشد؛ می‌توانی صفحه گیت‌هاب را باز کنی.";
+      repoStatus.textContent =
+        repositoryMessages?.loadErrorMessage ||
+        "دریافت مخزن‌ها انجام نشد؛ می‌توانی صفحه گیت‌هاب را باز کنی.";
       console.error("Could not load GitHub repositories:", error);
     } finally {
       isLoading = false;
