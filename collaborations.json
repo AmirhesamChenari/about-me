@@ -1,12 +1,9 @@
 {
-  "test-collaboration": {
+  "Ramtin-yang": {
     "enabled": true,
-    "name": "همکاری آزمایشی",
-    "description": "این مورد فقط برای آزمایش است و تا زمان فعال‌سازی نمایش داده نمی‌شود."
-  },
-   "test-collaboration1": {
-    "enabled": true,
-    "name": "همکاری آزمایشی",
-    "description": "این مورد فقط برای آزمایش است و تا زمان فعال‌سازی نمایش داده نمی‌شود."
+    "name": "Ramtin-yang",
+    "description": "تولید محتوای آموزشی و سرگرمی در زمینه برنامه نویسی و تکنولوژی",
+    "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR14SNPLoT5tDTjxZzSKiFwQ_7vJooXNBx0A5d5OTVGgQ&s=10",
+    "link": "https://ramtinyang.ir"
   }
 }
