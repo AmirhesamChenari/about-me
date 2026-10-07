@@ -26,7 +26,15 @@ html.site-settings-loading [data-github-profile],
 html.site-settings-loading [data-github-username],
 html.site-settings-loading [data-social-url],
 html.site-settings-loading [data-social-username] {
-    visibility: hidden;
+    display: none;
+}
+[data-site-setting]:empty {
+    display: none;
+}
+[data-site-setting="content.collaborations.title"]::after,
+[data-site-setting="content.github.title"]::after {
+    color: var(--yellow);
+    content: ".";
 }
 body {
     position: relative;

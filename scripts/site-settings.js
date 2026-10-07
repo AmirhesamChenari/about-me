@@ -100,7 +100,6 @@
       document.documentElement.classList.remove("site-settings-loading");
       return settings;
     } catch (error) {
-      document.documentElement.classList.remove("site-settings-loading");
       console.error("Could not load website settings:", error);
       throw error;
     }
