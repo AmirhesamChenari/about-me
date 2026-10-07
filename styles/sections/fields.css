@@ -1,0 +1,68 @@
+.fields-section {
+    background: var(--bg);
+}
+.fields-heading {
+    margin-bottom: 48px;
+}
+.field-list {
+    margin-right: 290px;
+    border-top: 1px solid var(--line);
+}
+.field-card {
+    min-height: 120px;
+    display: grid;
+    grid-template-columns: 45px 54px 1fr 32px;
+    gap: 18px;
+    align-items: center;
+    padding-inline: 15px;
+    border-bottom: 1px solid var(--line);
+    transition: .3s ease;
+}
+.field-card:hover {
+    padding-inline: 25px;
+    background: linear-gradient(90deg, transparent, rgb(255 239 0 / 3%), transparent);
+}
+.field-num {
+    align-self: start;
+    padding-top: 28px;
+    color: #777e7a;
+    font: 9px Arial, sans-serif;
+}
+.field-icon {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #363d37;
+    border-radius: 13px;
+    color: var(--yellow);
+    font: 14px monospace;
+    box-shadow: inset 0 0 20px rgb(255 239 0 / 4%);
+    transition: .3s;
+}
+.field-card:hover .field-icon {
+    border-color: var(--yellow);
+    box-shadow: 0 0 24px rgb(255 239 0 / 12%);
+    transform: rotate(-6deg);
+}
+.field-icon:nth-child(2) {
+    color: var(--cyan);
+}
+.field-copy h3 {
+    margin: 0 0 2px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.field-copy p {
+    margin: 0;
+    color: #a0a7a2;
+    font-size: 13px;
+}
+.field-arrow {
+    color: #737975;
+    transition: .2s;
+}
+.field-card:hover .field-arrow {
+    color: var(--yellow);
+    transform: translate(-4px, 4px);
+}

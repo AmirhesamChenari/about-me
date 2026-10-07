@@ -1,0 +1,95 @@
+.kicker, .section-eyebrow {
+    margin: 0 0 18px;
+    color: var(--yellow);
+    font-size: 13px;
+    letter-spacing: .3px;
+}
+.section-eyebrow {
+    margin-bottom: 11px;
+    color: #b3b9b2;
+    font-size: 13px;
+}
+.button {
+    min-height: 45px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    padding: 0 17px;
+    font-size: 13px;
+    transition: .25s ease;
+}
+.button span {
+    font-size: 16px;
+}
+.button-primary {
+    background: var(--yellow);
+    color: #11130c;
+    box-shadow: 0 0 26px rgb(255 239 0 / 13%);
+}
+.button-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 35px rgb(255 239 0 / 35%);
+}
+.button-quiet {
+    border: 1px solid var(--line);
+    color: #c4c8c4;
+}
+.button-quiet span {
+    color: var(--cyan);
+}
+.button-quiet:hover {
+    border-color: var(--cyan);
+    color: var(--cyan);
+}
+.section-layout {
+    position: relative;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 70px;
+}
+.section-label {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    align-self: start;
+    padding-top: 12px;
+    color: #a9b0aa;
+    font-size: 13px;
+}
+.section-number {
+    color: #fff59d;
+    font: 700 15px/1.5 var(--font);
+    direction: ltr;
+}
+.section-label-line {
+    width: 28px;
+    height: 1px;
+    background: #555b57;
+}
+.section-body {
+    position: relative;
+    z-index: 1;
+}
+.section-body h2 {
+    margin: 0;
+    font-size: clamp(32px, 5vw, 55px);
+    line-height: 1.5;
+    font-weight: 700;
+}
+.section-hint {
+    margin: 12px 0 0;
+    color: #a0a7a2;
+    font-size: 14px;
+}
+.reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1);
+}
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}

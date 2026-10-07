@@ -1,0 +1,42 @@
+{
+  "site": {
+    "title": "Taghdir-Me"
+  },
+  "contact": {
+    "email": "amirhesamchenari@gmail.com",
+    "emailProvider": "gmail"
+  },
+  "github": {
+    "username": "AmirhesamChenari",
+    "profileUrl": "https://github.com/AmirhesamChenari",
+    "repositoriesApiUrl": "https://api.github.com/users/AmirhesamChenari/repos"
+  },
+  "social": {
+    "telegram": {
+      "url": "https://t.me/taghdir_me",
+      "username": "@taghdir_me"
+    },
+    "instagram": {
+      "url": "https://www.instagram.com/taghdir.me/",
+      "username": "@taghdir.me"
+    },
+    "whatsapp": {
+      "url": "https://wa.me/taghdir_me",
+      "username": "@taghdir_me"
+    }
+  },
+  "content": {
+    "about": {
+      "introduction": "متن معرفی خودت را اینجا بنویس."
+    },
+    "fields": {
+      "description": "توضیحات هر حوزه را می‌توانی به دلخواه خودت تکمیل کنی.",
+      "software": "توضیحات این بخش را بنویس.",
+      "webDesign": "توضیحات این بخش را بنویس.",
+      "bot": "توضیحات این بخش را بنویس."
+    },
+    "github": {
+      "description": "مرتب‌سازی بر اساس تعداد ستاره یا زمان به‌روزرسانی؛ حداکثر ۹ مخزن نمایش داده می‌شود."
+    }
+  }
+}
