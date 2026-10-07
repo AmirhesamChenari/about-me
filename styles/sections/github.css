@@ -285,9 +285,10 @@
     direction: rtl;
     white-space: nowrap;
     opacity: 0;
+    pointer-events: none;
     transform: translateY(3px);
-    visibility: hidden;
-    transition: max-width .25s ease, padding .25s ease, border-width .25s ease, border-color .25s ease, opacity .25s ease, transform .25s ease, visibility .25s ease;
+    visibility: visible;
+    transition: max-width .25s ease, padding .25s ease, border-width .25s ease, border-color .25s ease, opacity .25s ease, transform .25s ease;
 }
 .repo-card:hover .card-click-hint,
 .repo-card:focus-within .card-click-hint,
@@ -298,8 +299,8 @@
     border-width: 1px;
     border-color: rgb(255 239 0 / 22%);
     opacity: .72;
+    pointer-events: auto;
     transform: translateY(0);
-    visibility: visible;
 }
 .card-click-hint:hover,
 .card-click-hint:focus-visible {
