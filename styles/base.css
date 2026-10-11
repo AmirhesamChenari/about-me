@@ -18,7 +18,6 @@ html {
     scroll-behavior: smooth;
     scroll-padding-top: 84px;
 }
-html.site-settings-loading [data-site-setting],
 html.site-settings-loading [data-contact-email],
 html.site-settings-loading [data-contact-email-text],
 html.site-settings-loading [data-copy-email],
