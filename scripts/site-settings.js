@@ -47,10 +47,6 @@
       document.querySelectorAll("[data-contact-email]").forEach((link) => {
         link.href = composeUrl;
       });
-      document.querySelectorAll("[data-contact-email-text]").forEach((label) => {
-        label.textContent = email;
-      });
-
       const copyButton = document.querySelector("[data-copy-email]");
       copyButton?.setAttribute("data-copy-email", email);
       document.querySelectorAll("[data-github-profile]").forEach((link) => {

@@ -6,6 +6,15 @@
   const menuBackdrop = document.querySelector(".menu-backdrop");
   document.documentElement.classList.add("has-js");
 
+  if (window.matchMedia("(min-width: 769px) and (prefers-reduced-motion: no-preference)").matches) {
+    const particleScript = document.createElement("script");
+    particleScript.src = "scripts/particles.js";
+    particleScript.onerror = () => {
+      console.error("Could not load desktop particle animation.");
+    };
+    document.head.append(particleScript);
+  }
+
   function closeMenu() {
     if (!menuToggle || !navigation || !menuBackdrop) return;
     menuToggle.setAttribute("aria-expanded", "false");
