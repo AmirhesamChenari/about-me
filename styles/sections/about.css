@@ -135,3 +135,23 @@
     color: #a0a7a2;
     font-size: 14px;
 }
+.about-details {
+    max-width: 670px;
+    margin-top: 24px;
+    color: #a0a7a2;
+    font-size: 14px;
+}
+.about-details h3 {
+    margin: 0 0 10px;
+    color: var(--text);
+    font-size: 17px;
+    font-weight: 600;
+}
+.about-details p {
+    margin: 0 0 12px;
+}
+.about-details a {
+    color: var(--yellow);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
