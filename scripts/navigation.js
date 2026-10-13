@@ -4,6 +4,7 @@
   const menuToggle = document.querySelector(".menu-toggle");
   const navigation = document.querySelector(".navigation");
   const menuBackdrop = document.querySelector(".menu-backdrop");
+  document.documentElement.classList.add("has-js");
 
   function closeMenu() {
     if (!menuToggle || !navigation || !menuBackdrop) return;

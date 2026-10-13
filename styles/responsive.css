@@ -265,6 +265,30 @@
     .footer-copyright {
         justify-content: flex-start;
     }
+
+    html:not(.has-js) .header-inner {
+        flex-wrap: wrap;
+        padding-block: 12px;
+    }
+    html:not(.has-js) .menu-toggle,
+    html:not(.has-js) .menu-backdrop {
+        display: none;
+    }
+    html:not(.has-js) .navigation {
+        position: static;
+        order: 3;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 4px;
+        overflow: visible;
+        border: 1px solid rgb(255 255 255 / 5%);
+        border-radius: 7px;
+        background: rgb(255 255 255 / 1.5%);
+        box-shadow: none;
+        transform: none;
+        visibility: visible;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -274,7 +298,7 @@
         animation-iteration-count: 1 !important;
         transition-duration: .01ms !important;
     }
-    .reveal {
+    html.has-js .reveal {
         opacity: 1;
         transform: none;
     }

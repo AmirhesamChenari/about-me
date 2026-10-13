@@ -85,11 +85,15 @@
     font-size: 14px;
 }
 .reveal {
-    opacity: 0;
-    transform: translateY(22px);
+    opacity: 1;
+    transform: none;
     transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1);
 }
-.reveal.is-visible {
+html.has-js .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+}
+html.has-js .reveal.is-visible {
     opacity: 1;
     transform: translateY(0);
 }

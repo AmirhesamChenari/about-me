@@ -9,15 +9,11 @@
       }
 
       const settings = await response.json();
-      const siteTitle = settings?.site?.title;
       const email = settings?.contact?.email;
       const emailProvider = settings?.contact?.emailProvider;
       const github = settings?.github;
       const username = github?.username;
       const social = settings?.social;
-      if (typeof siteTitle !== "string" || !siteTitle.trim()) {
-        throw new Error("Site settings must contain a site title.");
-      }
       if (typeof email !== "string" || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         throw new Error("Site settings must contain a valid contact email.");
       }
@@ -47,8 +43,6 @@
       ) {
         throw new Error("Site settings must contain valid GitHub profile and repositories URLs.");
       }
-
-      document.title = siteTitle.trim();
 
       document.querySelectorAll("[data-contact-email]").forEach((link) => {
         link.href = composeUrl;
@@ -87,17 +81,7 @@
           label.textContent = details.username;
         });
       });
-      document.querySelectorAll("[data-site-setting]").forEach((element) => {
-        const value = element.dataset.siteSetting
-          .split(".")
-          .reduce((current, key) => current?.[key], settings);
-        if (typeof value !== "string") {
-          throw new Error(`Missing text setting: ${element.dataset.siteSetting}`);
-        }
-        element.textContent = value;
-      });
       settings.github.repositoriesApiUrl = repositoriesApiUrl.href;
-      document.documentElement.classList.remove("site-settings-loading");
       return settings;
     } catch (error) {
       console.error("Could not load website settings:", error);

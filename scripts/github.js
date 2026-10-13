@@ -140,13 +140,13 @@
       card,
       "p",
       "repo-description",
-      repository.description || repositoryMessages.repositoryDescriptionFallback
+      repository.description || repoGrid.dataset.descriptionFallback
     );
     description.dataset.repositoryDescription = repository.full_name;
     if (!repository.description) {
       loadReadmeDescription(repository).then((summary) => {
         if (description.isConnected) {
-          description.textContent = summary || repositoryMessages.repositoryDescriptionFallback;
+          description.textContent = summary || repoGrid.dataset.descriptionFallback;
         }
       }).catch((error) => {
         console.error(`Could not load README description for ${repository.full_name}:`, error);
@@ -221,15 +221,7 @@
 
     try {
       const settings = await window.siteSettingsReady;
-      repositoryMessages = settings.content.github;
-      if (
-        typeof repositoryMessages.loadingMessage !== "string" ||
-        typeof repositoryMessages.emptyMessage !== "string" ||
-        typeof repositoryMessages.loadErrorMessage !== "string" ||
-        typeof repositoryMessages.repositoryDescriptionFallback !== "string"
-      ) {
-        throw new Error("Site settings must contain repository status messages.");
-      }
+      repositoryMessages = repoStatus.dataset;
       repoStatus.textContent = repositoryMessages.loadingMessage;
       const requestUrl = new URL(settings.github.repositoriesApiUrl);
       const query = new URLSearchParams(requestUrl.search);
@@ -275,7 +267,7 @@
     } catch (error) {
       repoStatus.classList.remove("is-empty");
       repoStatus.textContent =
-        repositoryMessages?.loadErrorMessage ||
+        repositoryMessages?.errorMessage ||
         "دریافت مخزن‌ها انجام نشد؛ می‌توانی صفحه گیت‌هاب را باز کنی.";
       console.error("Could not load GitHub repositories:", error);
     } finally {

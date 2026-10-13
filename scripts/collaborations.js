@@ -100,16 +100,7 @@
   async function loadCollaborations() {
     if (!collabGrid || !collabGridMore || !collabStatus || !collabToggle || !collabContent) return;
 
-    let messages;
     try {
-      const settings = await window.siteSettingsReady;
-      messages = settings.content.collaborations;
-      if (
-        typeof messages.emptyMessage !== "string" ||
-        typeof messages.loadErrorMessage !== "string"
-      ) {
-        throw new Error("Site settings must contain collaboration status messages.");
-      }
       const response = await fetch("./collaborations.json");
       if (!response.ok) {
         throw new Error(`Collaboration data request failed with ${response.status}`);
@@ -134,7 +125,7 @@
         collabToggle.hidden = true;
         setCollaborationListExpanded(false);
         collabStatus.classList.add("is-empty");
-        collabStatus.textContent = messages.emptyMessage;
+        collabStatus.textContent = collabStatus.dataset.emptyMessage;
         return;
       }
 
@@ -151,7 +142,7 @@
     } catch (error) {
       collabStatus.classList.remove("is-empty");
       collabStatus.textContent =
-        messages?.loadErrorMessage || "اطلاعات همکاری‌ها بارگذاری نشد.";
+        collabStatus.dataset.errorMessage || "اطلاعات همکاری‌ها بارگذاری نشد.";
       console.error("Could not load collaboration data:", error);
     }
   }

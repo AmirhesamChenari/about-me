@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fa" dir="rtl" class="site-settings-loading">
+<html lang="fa" dir="rtl">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -47,7 +47,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/sections/hero.css">
+  <link rel="stylesheet" href="styles/sections/about.css">
+  <link rel="stylesheet" href="styles/sections/fields.css">
+  <link rel="stylesheet" href="styles/sections/github.css">
+  <link rel="stylesheet" href="styles/sections/contact.css">
+  <link rel="stylesheet" href="styles/motion.css">
+  <link rel="stylesheet" href="styles/responsive.css">
   <script src="scripts/site-settings.js" defer></script>
   <script src="scripts/navigation.js" defer></script>
   <script src="scripts/animations.js" defer></script>
@@ -76,7 +85,7 @@
         <a href="#contact">ارتباط</a>
       </nav>
       <button class="menu-backdrop" type="button" aria-label="بستن منو"></button>
-      <a class="header-mail" data-contact-email target="_blank" rel="noopener noreferrer">ایمیل <span aria-hidden="true">↗</span></a>
+      <a class="header-mail" href="mailto:amirhesamchenari@gmail.com" data-contact-email target="_blank" rel="noopener noreferrer">ایمیل <span aria-hidden="true">↗</span></a>
     </div>
   </header>
 
@@ -91,7 +100,7 @@
           <p class="hero-fields">نرم‌افزار <i></i> طراحی وب <i></i> ربات</p>
           <div class="hero-links">
             <a class="button button-primary" href="#about">درباره من <span aria-hidden="true">↓</span></a>
-            <a class="button button-quiet" data-contact-email target="_blank" rel="noopener noreferrer">ارسال ایمیل <span aria-hidden="true">↗</span></a>
+            <a class="button button-quiet" href="mailto:amirhesamchenari@gmail.com" data-contact-email target="_blank" rel="noopener noreferrer">ارسال ایمیل <span aria-hidden="true">↗</span></a>
           </div>
         </div>
       </div>
@@ -108,12 +117,13 @@
           <p class="section-eyebrow">معرفی</p>
           <h2>درباره من<span class="accent-dot">.</span></h2>
           <div class="editable-area">
-            <p data-site-setting="content.about.introduction">من امیرحسام چناری هستم و با نام تقدیر می (Taghdir Me) شناخته می‌شوم. از سال ۱۴۰۰ در حوزه توسعه نرم‌افزار فعالیت می‌کنم و هم‌زمان در این زمینه به تحصیل ادامه می‌دهم. تمرکز کاری من توسعه Backend و Frontend، طراحی و توسعه وب‌سایت و وب‌اپلیکیشن، ساخت نرم‌افزار برای پلتفرم‌های مختلف و طراحی ربات برای پلتفرم‌های ارتباطی است. به ساخت نرم‌افزارهای استاندارد، قابل توسعه، بهینه و قابل اعتماد علاقه‌مندم و همواره دانش خود را در فناوری‌های جدید گسترش می‌دهم.</p>
+            <p>من امیرحسام چناری، متولد ۱۰ خرداد ۱۳۸۴ و شناخته‌شده با نام تقدیر می (Taghdir Me) هستم. در حوزه توسعه نرم‌افزار و طراحی وب فعالیت می‌کنم و هم‌زمان در این زمینه به تحصیل ادامه می‌دهم. فعالیت حرفه‌ای من از سال ۱۴۰۰ آغاز شده است. تمرکز کاری من بر توسعه Backend و Frontend، طراحی سایت و وب‌اپلیکیشن، ساخت نرم‌افزار برای Windows و Linux و توسعه اپلیکیشن‌های موبایل است. همچنین انواع ربات‌ها و سیستم‌های اختصاصی را برای پلتفرم‌هایی مانند Telegram، Rubika، Discord و WhatsApp طراحی و پیاده‌سازی می‌کنم. به ساخت نرم‌افزارهای استاندارد، قابل توسعه، بهینه و قابل اعتماد علاقه‌مندم و همواره دانش و تجربه خود را در فناوری‌های جدید گسترش می‌دهم.</p>
           </div>
           <div class="about-details">
             <h3>زمینه‌های کاری امیرحسام چناری</h3>
             <p>در توسعه نرم‌افزار، طراحی راهکار را بر اساس نیاز پروژه و پلتفرم مورد استفاده پیش می‌برم. این زمینه‌ها شامل توسعه Backend و Frontend، ساخت وب‌سایت و وب‌اپلیکیشن، و تولید نرم‌افزار برای Windows، Linux و دستگاه‌های موبایل است. هدف، ارائه‌ی راهکاری روشن، قابل نگهداری و متناسب با کاربرد هر پروژه است.</p>
-            <p>بخش دیگری از فعالیت من به طراحی ربات و سیستم‌های اختصاصی برای پلتفرم‌های ارتباطی اختصاص دارد؛ از جمله Telegram، Rubika، Discord و WhatsApp. در این حوزه، نیاز هر پلتفرم و کاربرد مورد انتظار در طراحی در نظر گرفته می‌شود. برای دیدن پروژه‌های عمومی، <a href="#github">مخزن‌های گیت‌هاب امیرحسام چناری</a> را ببینید و برای گفت‌وگو درباره‌ی همکاری به <a href="#contact">بخش ارتباط با من</a> بروید.</p>
+            <p>بخش دیگری از فعالیت من به طراحی ربات و سیستم‌های اختصاصی برای پلتفرم‌های ارتباطی اختصاص دارد؛ از جمله Telegram، Rubika، Discord و WhatsApp. در این حوزه، نیاز هر پلتفرم و کاربرد مورد انتظار در طراحی در نظر گرفته می‌شود.</p>
+            <p>برای دیدن پروژه‌های عمومی، <a href="#github">مخزن‌های گیت‌هاب امیرحسام چناری</a> را ببینید و برای گفت‌وگو درباره‌ی همکاری به <a href="#contact">بخش ارتباط با من</a> بروید.</p>
           </div>
         </div>
       </div>
@@ -137,19 +147,19 @@
           <article class="field-card reveal">
             <span class="field-num">۰۱</span>
             <span class="field-icon" aria-hidden="true">&lt;/&gt;</span>
-            <div class="field-copy"><h3>نرم‌افزار</h3><p data-site-setting="content.fields.software">توسعه و ساخت نرم‌افزار برای Windows، Linux و سایر پلتفرم‌ها، به‌همراه توسعه اپلیکیشن‌های موبایل.</p></div>
+            <div class="field-copy"><h3>نرم‌افزار</h3><p>توسعه و ساخت نرم‌افزار برای Windows، Linux و سایر پلتفرم‌ها، به‌همراه توسعه اپلیکیشن‌های موبایل.</p></div>
             <span class="field-arrow" aria-hidden="true">↙</span>
           </article>
           <article class="field-card reveal">
             <span class="field-num">۰۲</span>
             <span class="field-icon" aria-hidden="true">⌘</span>
-            <div class="field-copy"><h3>طراحی وب</h3><p data-site-setting="content.fields.webDesign">طراحی و توسعه وب‌سایت و Web Application با تمرکز بر طراحی مدرن، عملکرد بهینه و تجربه کاربری مناسب.</p></div>
+            <div class="field-copy"><h3>طراحی وب</h3><p>طراحی و توسعه وب‌سایت و Web Application با تمرکز بر طراحی مدرن، رابط کاربری حرفه‌ای، عملکرد بهینه و تجربه کاربری مناسب.</p></div>
             <span class="field-arrow" aria-hidden="true">↙</span>
           </article>
           <article class="field-card reveal">
             <span class="field-num">۰۳</span>
             <span class="field-icon bot-icon" aria-hidden="true">▣</span>
-            <div class="field-copy"><h3>ربات</h3><p data-site-setting="content.fields.bot">طراحی و توسعه ربات برای Telegram، Rubika، Discord، WhatsApp و دیگر پلتفرم‌های ارتباطی.</p></div>
+            <div class="field-copy"><h3>ربات</h3><p>طراحی و توسعه انواع ربات برای پلتفرم‌هایی مانند Telegram، Rubika، Discord، WhatsApp و سایر پلتفرم‌های ارتباطی، با قابلیت پیاده‌سازی سیستم‌های اختصاصی و هوشمند.</p></div>
             <span class="field-arrow" aria-hidden="true">↙</span>
           </article>
         </div>
@@ -165,11 +175,11 @@
             <span>همکاری‌ها</span>
           </div>
           <div class="section-body reveal">
-            <p class="section-eyebrow" data-site-setting="content.collaborations.eyebrow"></p>
-            <h2 data-site-setting="content.collaborations.title">همکاری‌های من</h2>
+            <p class="section-eyebrow">فرصت‌های همکاری</p>
+            <h2>همکاری‌های من</h2>
           </div>
         </div>
-        <p class="repo-status" id="collab-status" role="status" aria-live="polite" data-site-setting="content.collaborations.loadingMessage"></p>
+        <p class="repo-status" id="collab-status" role="status" aria-live="polite" data-empty-message="هنوز همکاری‌ای ثبت نشده است." data-error-message="اطلاعات همکاری‌ها بارگذاری نشد.">در حال بارگذاری همکاری‌ها…</p>
         <div class="collab-disclosure">
           <div class="collab-grid" id="collab-grid" aria-label="همکاری‌ها"></div>
           <button type="button" class="disclosure-toggle" id="collab-toggle" aria-expanded="false" aria-controls="collab-content" aria-label="نمایش همکاری‌های بیشتر" hidden>
@@ -193,21 +203,21 @@
             <span>گیت‌هاب</span>
           </div>
           <div class="section-body reveal">
-            <p class="section-eyebrow" data-site-setting="content.github.eyebrow"></p>
-            <h2 data-site-setting="content.github.title">مخزن‌های گیت‌هاب</h2>
-            <p class="section-hint" data-site-setting="content.github.description">پروژه‌ها و مخزن‌های عمومی من در گیت‌هاب.</p>
+            <p class="section-eyebrow">مخزن‌های عمومی</p>
+            <h2>مخزن‌های گیت‌هاب</h2>
+            <p class="section-hint">مرتب‌سازی بر اساس تعداد ستاره یا زمان به‌روزرسانی؛ حداکثر ۹ مخزن نمایش داده می‌شود.</p>
           </div>
         </div>
         <div class="github-toolbar reveal">
-          <a class="github-profile" data-github-profile target="_blank" rel="noopener noreferrer">
+          <a class="github-profile" href="https://github.com/AmirhesamChenari" data-github-profile target="_blank" rel="noopener noreferrer">
             <span class="github-profile-copy">
-              <strong class="github-profile-name"><span data-github-username></span><svg class="github-profile-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.27-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.04 1.78 2.73 1.27 3.4.97.1-.75.41-1.27.74-1.56-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.2-3.1-.12-.3-.52-1.47.11-3.06 0 0 .98-.31 3.2 1.18a11.1 11.1 0 0 1 5.82 0c2.22-1.5 3.2-1.18 3.2-1.18.63 1.59.23 2.76.11 3.06.75.81 1.2 1.84 1.2 3.1 0 4.43-2.69 5.4-5.25 5.69.42.36.79 1.06.79 2.14 0 1.55-.01 2.8-.01 3.18 0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg></strong>
+              <strong class="github-profile-name"><span data-github-username>AmirhesamChenari</span><svg class="github-profile-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.27-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.04 1.78 2.73 1.27 3.4.97.1-.75.41-1.27.74-1.56-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.2-3.1-.12-.3-.52-1.47.11-3.06 0 0 .98-.31 3.2 1.18a11.1 11.1 0 0 1 5.82 0c2.22-1.5 3.2-1.18 3.2-1.18.63 1.59.23 2.76.11 3.06.75.81 1.2 1.84 1.2 3.1 0 4.43-2.69 5.4-5.25 5.69.42.36.79 1.06.79 2.14 0 1.55-.01 2.8-.01 3.18 0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg></strong>
               <small>مشاهده صفحه گیت‌هاب</small>
             </span>
             <span class="external-arrow" aria-hidden="true">↗</span>
           </a>
           <div class="repo-toolbar-actions">
-            <span class="repo-source" data-site-setting="content.github.sourceLabel"></span>
+            <span class="repo-source">دریافت زنده از گیت‌هاب</span>
             <button class="repo-refresh" id="repo-refresh" type="button" aria-label="به‌روزرسانی فهرست مخزن‌ها">
               <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M16.5 7A7 7 0 0 0 4 5.2L2.5 7M2.5 7V3.5M2.5 7H6M3.5 13A7 7 0 0 0 16 14.8l1.5-1.8m0 0v3.5m0-3.5H14"/></svg>
               <span>به‌روزرسانی</span>
@@ -215,12 +225,12 @@
           </div>
         </div>
         <div class="repo-panel">
-          <p class="repo-status" id="repo-status" role="status" aria-live="polite" data-site-setting="content.github.loadingMessage"></p>
+          <p class="repo-status" id="repo-status" role="status" aria-live="polite" data-loading-message="در حال دریافت مخزن‌ها از گیت‌هاب…" data-empty-message="مخزن عمومی‌ای برای نمایش پیدا نشد." data-error-message="دریافت مخزن‌ها انجام نشد؛ می‌توانی صفحه گیت‌هاب را باز کنی.">در حال دریافت مخزن‌ها از گیت‌هاب…</p>
           <div class="repo-sorter" id="repo-sorter" role="group" aria-label="مرتب‌سازی مخزن‌ها" hidden>
             <button type="button" class="repo-sort-button" data-repo-sort="stars" aria-pressed="true">بیشترین ستاره</button>
             <button type="button" class="repo-sort-button" data-repo-sort="recent" aria-pressed="false">جدیدترین‌ها</button>
           </div>
-          <div class="repo-grid" id="repo-grid" aria-label="آخرین مخزن‌های گیت‌هاب"></div>
+          <div class="repo-grid" id="repo-grid" aria-label="آخرین مخزن‌های گیت‌هاب" data-description-fallback="برای این مخزن توضیحی ثبت نشده است."></div>
           <button type="button" class="disclosure-toggle repo-toggle" id="repo-toggle" aria-expanded="false" aria-controls="repo-content" aria-label="نمایش مخزن‌های بیشتر" hidden>
             <svg class="disclosure-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="m3 6 5 5 5-5"/></svg>
           </button>
@@ -245,37 +255,37 @@
           <h2>برای ارتباط و همکاری<span class="accent-dot">.</span></h2>
         </div>
         <div class="contact-socials" aria-label="شبکه‌های اجتماعی و ایمیل">
-          <a class="social-card" data-social-url="telegram" target="_blank" rel="noopener noreferrer">
+          <a class="social-card" href="https://t.me/taghdir_me" data-social-url="telegram" target="_blank" rel="noopener noreferrer">
             <span class="social-icon telegram-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false"><path d="M21.7 4.3 18.5 20c-.2 1.1-.9 1.3-1.8.8l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L6 13.4l-4.9-1.5c-1.1-.3-1.1-1 .2-1.5L20.5 3.1c.9-.3 1.6.2 1.2 1.2Z"/></svg>
             </span>
-            <span class="social-details"><strong>Telegram</strong><small data-social-username="telegram" dir="ltr"></small></span>
+            <span class="social-details"><strong>Telegram</strong><small data-social-username="telegram" dir="ltr">@taghdir_me</small></span>
             <span class="social-arrow" aria-hidden="true">↗</span>
           </a>
-          <a class="social-card" data-social-url="instagram" target="_blank" rel="noopener noreferrer">
+          <a class="social-card" href="https://www.instagram.com/taghdir.me/" data-social-url="instagram" target="_blank" rel="noopener noreferrer">
             <span class="social-icon instagram-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle class="instagram-flash" cx="17.5" cy="6.8" r="1"/></svg>
             </span>
-            <span class="social-details"><strong>Instagram</strong><small data-social-username="instagram" dir="ltr"></small></span>
+            <span class="social-details"><strong>Instagram</strong><small data-social-username="instagram" dir="ltr">@taghdir.me</small></span>
             <span class="social-arrow" aria-hidden="true">↗</span>
           </a>
-          <a class="social-card" data-social-url="whatsapp" target="_blank" rel="noopener noreferrer">
+          <a class="social-card" href="https://wa.me/taghdir_me" data-social-url="whatsapp" target="_blank" rel="noopener noreferrer">
             <span class="social-icon whatsapp-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.3-4.7a8.5 8.5 0 1 1 16.2-4.1Z"/><path d="M8.3 7.7c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.8 1.8c.1.2.1.4 0 .6l-.6.7c-.2.2-.2.4-.1.6.7 1.2 1.6 2.1 2.8 2.7.2.1.4.1.6-.1l.8-.9c.2-.2.4-.2.7-.1l1.7.8c.3.1.4.3.4.5 0 .3-.2 1.1-.7 1.5-.5.5-1.2.7-2 .6-1.9-.3-3.8-1.4-5.3-2.9-1.4-1.5-2.2-3.1-2.3-4.4-.1-.8.3-1.4.7-1.8Z"/></svg>
             </span>
-            <span class="social-details"><strong>WhatsApp</strong><small data-social-username="whatsapp" dir="ltr"></small></span>
+            <span class="social-details"><strong>WhatsApp</strong><small data-social-username="whatsapp" dir="ltr">@taghdir_me</small></span>
             <span class="social-arrow" aria-hidden="true">↗</span>
           </a>
-          <a class="social-card" data-contact-email target="_blank" rel="noopener noreferrer">
+          <a class="social-card" href="mailto:amirhesamchenari@gmail.com" data-contact-email target="_blank" rel="noopener noreferrer">
             <span class="social-icon email-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
             </span>
-            <span class="social-details"><strong>Email</strong><small data-contact-email-text dir="ltr"></small></span>
+            <span class="social-details"><strong>Email</strong><small data-contact-email-text dir="ltr">amirhesamchenari@gmail.com</small></span>
             <span class="social-arrow" aria-hidden="true">↗</span>
           </a>
         </div>
         <div class="contact-copy">
-          <button class="copy-button" type="button" data-copy-email>
+          <button class="copy-button" type="button" data-copy-email="amirhesamchenari@gmail.com">
             <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="7" y="7" width="10" height="11" rx="2"/><path d="M13 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>
             <span data-copy-label>کپی آدرس ایمیل</span>
           </button>

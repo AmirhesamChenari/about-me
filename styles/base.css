@@ -18,23 +18,6 @@ html {
     scroll-behavior: smooth;
     scroll-padding-top: 84px;
 }
-html.site-settings-loading [data-contact-email],
-html.site-settings-loading [data-contact-email-text],
-html.site-settings-loading [data-copy-email],
-html.site-settings-loading [data-github-profile],
-html.site-settings-loading [data-github-username],
-html.site-settings-loading [data-social-url],
-html.site-settings-loading [data-social-username] {
-    display: none;
-}
-[data-site-setting]:empty {
-    display: none;
-}
-[data-site-setting="content.collaborations.title"]::after,
-[data-site-setting="content.github.title"]::after {
-    color: var(--yellow);
-    content: ".";
-}
 body {
     position: relative;
     margin: 0;
