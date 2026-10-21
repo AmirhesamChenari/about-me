@@ -9,7 +9,12 @@
       }
 
       const settings = await response.json();
-      const email = settings?.contact?.email;
+      const emailUser = settings?.contact?.emailUser;
+      const emailDomain = settings?.contact?.emailDomain;
+      const email =
+        typeof emailUser === "string" && typeof emailDomain === "string"
+          ? `${emailUser}@${emailDomain}`
+          : "";
       const emailProvider = settings?.contact?.emailProvider;
       const github = settings?.github;
       const username = github?.username;
@@ -45,10 +50,11 @@
       }
 
       document.querySelectorAll("[data-contact-email]").forEach((link) => {
-        link.href = composeUrl;
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          window.open(composeUrl, "_blank", "noopener,noreferrer");
+        });
       });
-      const copyButton = document.querySelector("[data-copy-email]");
-      copyButton?.setAttribute("data-copy-email", email);
       document.querySelectorAll("[data-github-profile]").forEach((link) => {
         link.href = profileUrl.href;
       });

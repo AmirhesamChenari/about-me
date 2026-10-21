@@ -1,6 +1,7 @@
 {
   "contact": {
-    "email": "amirhesamchenari@gmail.com",
+    "emailUser": "amirhesamchenari",
+    "emailDomain": "gmail.com",
     "emailProvider": "gmail"
   },
   "github": {

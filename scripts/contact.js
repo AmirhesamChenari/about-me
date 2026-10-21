@@ -48,13 +48,9 @@
   }
 
   copyButton.addEventListener("click", async () => {
-    const email = copyButton.getAttribute("data-copy-email");
-    if (!email) {
-      setCopyFeedback("نشانی ایمیل در تنظیمات ثبت نشده است.", false);
-      return;
-    }
-
     try {
+      const settings = await window.siteSettingsReady;
+      const email = `${settings.contact.emailUser}@${settings.contact.emailDomain}`;
       await copyWithFallback(email);
       setCopyFeedback("نشانی ایمیل کپی شد.", true);
     } catch (error) {
