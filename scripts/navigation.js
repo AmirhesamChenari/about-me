@@ -6,7 +6,7 @@
   const menuBackdrop = document.querySelector(".menu-backdrop");
   document.documentElement.classList.add("has-js");
 
-  if (window.matchMedia("(min-width: 769px) and (prefers-reduced-motion: no-preference)").matches) {
+  if (window.matchMedia("(prefers-reduced-motion: no-preference)").matches) {
     const particleScript = document.createElement("script");
     particleScript.src = "scripts/particles.js";
     particleScript.onerror = () => {
