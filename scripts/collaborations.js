@@ -25,8 +25,8 @@
     collabToggle.setAttribute(
       "aria-label",
       expanded
-        ? "بستن همکاری‌های بیشتر"
-        : `نمایش ${countFormatter.format(remainingCount)} همکاری دیگر`
+        ? "بستن فهرست همکاری‌های بیشتر"
+        : `مشاهدهٔ ${countFormatter.format(remainingCount)} همکاری دیگر`
     );
     collabContent.setAttribute("aria-hidden", String(!expanded));
     collabContent.classList.toggle("is-open", expanded);
@@ -62,7 +62,7 @@
       top,
       "span",
       "collab-card-index",
-      `همکاری / ${numberFormatter.format(index + 1)}`
+      `همکاری شمارهٔ ${numberFormatter.format(index + 1)}`
     );
     card.append(top);
 
@@ -81,7 +81,7 @@
     const linkUrl = safeUrl(collaboration.link);
     nameHeading.textContent = collaboration.name;
     if (linkUrl) {
-      const clickHint = appendText(nameHeading, "a", "card-click-hint", "کلیک کنید");
+      const clickHint = appendText(nameHeading, "a", "card-click-hint", "مشاهدهٔ پیوند");
       clickHint.href = linkUrl;
       if (/^https?:\/\//i.test(linkUrl)) {
         clickHint.target = "_blank";
@@ -142,7 +142,7 @@
     } catch (error) {
       collabStatus.classList.remove("is-empty");
       collabStatus.textContent =
-        collabStatus.dataset.errorMessage || "اطلاعات همکاری‌ها بارگذاری نشد.";
+        collabStatus.dataset.errorMessage || "بارگذاری اطلاعات همکاری‌ها با خطا روبه‌رو شد.";
       console.error("Could not load collaboration data:", error);
     }
   }

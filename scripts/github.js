@@ -102,8 +102,8 @@
     repoToggle.setAttribute(
       "aria-label",
       expanded
-        ? "بستن مخزن‌های بیشتر"
-        : `نمایش ${numberFormatter.format(remainingCount)} مخزن دیگر`
+        ? "بستن فهرست مخزن‌های بیشتر"
+        : `مشاهدهٔ ${numberFormatter.format(remainingCount)} مخزن دیگر`
     );
     repoContent.setAttribute("aria-hidden", String(!expanded));
     repoContent.classList.toggle("is-open", expanded);
@@ -125,13 +125,13 @@
       top,
       "span",
       "repo-card-index",
-      `مخزن / ${repositoryIndexFormatter.format(index + 1)}`
+      `مخزن شمارهٔ ${repositoryIndexFormatter.format(index + 1)}`
     );
     appendText(top, "span", "repo-visibility", "عمومی");
     card.append(top);
 
     const nameHeading = appendText(card, "h3", "repo-name", repository.name);
-    const clickHint = appendText(nameHeading, "a", "card-click-hint", "کلیک کنید");
+    const clickHint = appendText(nameHeading, "a", "card-click-hint", "مشاهدهٔ مخزن");
     clickHint.href = repository.html_url;
     clickHint.target = "_blank";
     clickHint.rel = "noopener noreferrer";
@@ -165,7 +165,7 @@
 
     appendText(meta, "span", "repo-stat", `★ ${numberFormatter.format(repository.stargazers_count)}`);
     appendText(meta, "span", "repo-stat", `⑂ ${numberFormatter.format(repository.forks_count)}`);
-    appendText(meta, "span", "repo-updated", `به‌روزرسانی ${dateFormatter.format(new Date(repository.updated_at))}`);
+    appendText(meta, "span", "repo-updated", `آخرین به‌روزرسانی: ${dateFormatter.format(new Date(repository.updated_at))}`);
     card.append(meta);
     targetGrid.append(card);
   }
@@ -268,7 +268,7 @@
       repoStatus.classList.remove("is-empty");
       repoStatus.textContent =
         repositoryMessages?.errorMessage ||
-        "دریافت مخزن‌ها انجام نشد؛ می‌توانی صفحه گیت‌هاب را باز کنی.";
+        "دریافت فهرست مخزن‌ها با خطا روبه‌رو شد. مراجعه به صفحهٔ گیت‌هاب امکان‌پذیر است.";
       console.error("Could not load GitHub repositories:", error);
     } finally {
       isLoading = false;

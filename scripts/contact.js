@@ -12,13 +12,13 @@
   function setCopyFeedback(message, copied) {
     copyFeedback.textContent = message;
     copyButton.classList.toggle("is-copied", copied);
-    copyLabel.textContent = copied ? "کپی شد" : "کپی آدرس ایمیل";
+    copyLabel.textContent = copied ? "نشانی کپی شد" : "کپی نشانی ایمیل";
     window.clearTimeout(feedbackTimeout);
     if (copied) {
       feedbackTimeout = window.setTimeout(() => {
         copyFeedback.textContent = "";
         copyButton.classList.remove("is-copied");
-        copyLabel.textContent = "کپی آدرس ایمیل";
+        copyLabel.textContent = "کپی نشانی ایمیل";
       }, 2500);
     }
   }
@@ -50,15 +50,15 @@
   copyButton.addEventListener("click", async () => {
     const email = copyButton.getAttribute("data-copy-email");
     if (!email) {
-      setCopyFeedback("نشانی ایمیل در تنظیمات پیدا نشد.", false);
+      setCopyFeedback("نشانی ایمیل در تنظیمات ثبت نشده است.", false);
       return;
     }
 
     try {
       await copyWithFallback(email);
-      setCopyFeedback("آدرس ایمیل کپی شد.", true);
+      setCopyFeedback("نشانی ایمیل کپی شد.", true);
     } catch (error) {
-      setCopyFeedback("کپی انجام نشد؛ ایمیل را از کارت بالا انتخاب کنید.", false);
+      setCopyFeedback("کپی نشانی ایمیل انجام نشد.", false);
       console.error("Could not copy email address:", error);
     }
   });

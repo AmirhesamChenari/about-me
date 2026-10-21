@@ -18,7 +18,7 @@
   function closeMenu() {
     if (!menuToggle || !navigation || !menuBackdrop) return;
     menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.setAttribute("aria-label", "باز کردن منو");
+    menuToggle.setAttribute("aria-label", "گشودن منو");
     navigation.classList.remove("is-open");
     menuBackdrop.classList.remove("is-visible");
     document.body.classList.remove("menu-open");
@@ -29,7 +29,7 @@
   menuToggle.addEventListener("click", () => {
     const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
     menuToggle.setAttribute("aria-expanded", String(!isOpen));
-    menuToggle.setAttribute("aria-label", isOpen ? "باز کردن منو" : "بستن منو");
+    menuToggle.setAttribute("aria-label", isOpen ? "گشودن منو" : "بستن منو");
     navigation.classList.toggle("is-open", !isOpen);
     menuBackdrop.classList.toggle("is-visible", !isOpen);
     document.body.classList.toggle("menu-open", !isOpen);
