@@ -40,6 +40,18 @@
   <!-- Sitemap -->
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/main.css">
+
+  <!-- Markdown Support -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js" defer></script>
+
   <!-- Structured Data: Person, Website and WebPage -->
   <script type="application/ld+json">
   {
@@ -105,19 +117,12 @@
   }
   </script>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="styles/main.css">
-
   <!-- JavaScript -->
   <script src="scripts/site-settings.js" defer></script>
   <script src="scripts/navigation.js" defer></script>
   <script src="scripts/animations.js" defer></script>
 </head>
+
 <body>
   <a class="skip-link" href="#main">رفتن به محتوای اصلی صفحه</a>
 
@@ -126,9 +131,11 @@
       <a class="brand" href="#home" aria-label="صفحه اصلی امیرحسام چناری">
         <span>taghdir <span class="brand-period">me</span></span>
       </a>
+
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation" aria-label="باز کردن منو">
         <span></span><span></span>
       </button>
+
       <nav class="navigation" id="navigation" aria-label="ناوبری اصلی">
         <a href="#about">درباره</a>
         <a href="#fields">تخصص‌ها</a>
@@ -136,20 +143,30 @@
         <a href="#github">پروژه‌ها</a>
         <a href="#contact">ارتباط</a>
       </nav>
+
       <button class="menu-backdrop" type="button" aria-label="بستن منو"></button>
       <a class="header-mail" href="https://mail.google.com/mail/" data-contact-email>تماس <span aria-hidden="true">↗</span></a>
     </div>
   </header>
 
   <main id="main">
+    <!-- Hero -->
     <section class="hero section" id="home">
       <canvas class="hero-particles" aria-hidden="true"></canvas>
+
       <div class="container hero-layout">
         <div class="hero-content reveal">
           <p class="kicker">وب‌سایت شخصی</p>
-          <h1>امیرحسام<br><span class="name-accent">چناری</span><span class="hero-name-latin" dir="ltr">Amirhesam Chenari</span></h1>
+
+          <h1>
+            امیرحسام<br>
+            <span class="name-accent">چناری</span>
+            <span class="hero-name-latin" dir="ltr">Amirhesam Chenari</span>
+          </h1>
+
           <p class="alias">تقدیر می <span>taghdir me</span></p>
           <p class="hero-fields">توسعه نرم‌افزار <i></i> طراحی وب <i></i> توسعه ربات</p>
+
           <div class="hero-links">
             <a class="button button-primary" href="#about">آشنایی بیشتر <span aria-hidden="true">↓</span></a>
             <a class="button button-quiet" href="https://mail.google.com/mail/" data-contact-email>ارتباط <span aria-hidden="true">↗</span></a>
@@ -158,6 +175,7 @@
       </div>
     </section>
 
+    <!-- About -->
     <section class="content-section about-section" id="about">
       <div class="container section-layout">
         <div class="section-label reveal">
@@ -165,13 +183,17 @@
           <span class="section-label-line"></span>
           <span>درباره</span>
         </div>
+
         <div class="section-body reveal">
           <p class="section-eyebrow">درباره</p>
           <h2>دربارهٔ امیرحسام<span class="accent-dot">.</span></h2>
+
           <div class="editable-area">
             <p>امیرحسام چناری، متولد ۱۰ خرداد ۱۳۸۴، با نام «تقدیر می» (Taghdir Me) شناخته می‌شود. او توسعه‌دهندهٔ نرم‌افزار و طراح وب است و هم‌زمان در همین حوزه تحصیل می‌کند. فعالیت حرفه‌ای‌اش را از سال ۱۴۰۰ آغاز کرده است. در حوزهٔ وب، روی فرانت‌اند و بک‌اند کار می‌کند و وب‌سایت و وب‌اپلیکیشن می‌سازد.</p>
+
             <p>ساخت نرم‌افزار برای Windows و Linux و توسعهٔ اپلیکیشن‌های موبایل نیز بخشی از فعالیت‌های اوست. او برای پلتفرم‌هایی مانند Telegram، Rubika، Discord و WhatsApp ربات طراحی می‌کند. پیاده‌سازی سامانه‌های اختصاصی برای این پلتفرم‌ها را نیز انجام می‌دهد. ساخت نرم‌افزارهای استاندارد، توسعه‌پذیر و قابل‌اعتماد از علاقه‌مندی‌های حرفه‌ای اوست. دنبال‌کردن فناوری‌های تازه نیز بخشی از مسیر حرفه‌ای اوست.</p>
           </div>
+
           <div class="about-details">
             <h3>حوزه‌های تخصصی</h3>
             <p>او در زمینهٔ فرانت‌اند و بک‌اند فعالیت می‌کند. طراحی وب‌سایت و وب‌اپلیکیشن نیز بخشی از کار اوست. ساخت نرم‌افزار برای Windows، Linux و موبایل را هم انجام می‌دهد. طراحی ربات و سامانه‌های اختصاصی برای پلتفرم‌های ارتباطی نیز از زمینه‌های فعالیت اوست. از جملهٔ این پلتفرم‌ها می‌توان به Telegram، Rubika، Discord و WhatsApp اشاره کرد. بخشی از پروژه‌های عمومی در <a href="#github">بخش پروژه‌ها</a> قرار دارند. پیوندهای شبکه‌های اجتماعی و ایمیل نیز در <a href="#contact">بخش ارتباط</a> ارائه شده‌اند.</p>
@@ -180,6 +202,7 @@
       </div>
     </section>
 
+    <!-- Fields -->
     <section class="content-section fields-section" id="fields">
       <div class="container">
         <div class="section-layout fields-heading">
@@ -188,35 +211,49 @@
             <span class="section-label-line"></span>
             <span>تخصص‌ها</span>
           </div>
+
           <div class="section-body reveal">
             <p class="section-eyebrow">حوزه‌های کاری</p>
             <h2>نرم‌افزار، وب و ربات<span class="accent-dot">.</span></h2>
             <p class="section-hint">زمینه‌های فعالیت امیرحسام چناری توسعهٔ نرم‌افزار، طراحی وب‌سایت و وب‌اپلیکیشن و پیاده‌سازی ربات‌ها و سامانه‌های اختصاصی را دربرمی‌گیرد.</p>
           </div>
         </div>
+
         <div class="field-list">
           <article class="field-card reveal">
             <span class="field-num">۰۱</span>
             <span class="field-icon" aria-hidden="true">&lt;/&gt;</span>
-            <div class="field-copy"><h3>توسعهٔ نرم‌افزار</h3><p>توسعه و تولید نرم‌افزار برای Windows و Linux و نیز طراحی اپلیکیشن‌های دستگاه‌های همراه.</p></div>
+            <div class="field-copy">
+              <h3>توسعهٔ نرم‌افزار</h3>
+              <p>توسعه و تولید نرم‌افزار برای Windows و Linux و نیز طراحی اپلیکیشن‌های دستگاه‌های همراه.</p>
+            </div>
             <span class="field-arrow" aria-hidden="true">↙</span>
           </article>
+
           <article class="field-card reveal">
             <span class="field-num">۰۲</span>
             <span class="field-icon" aria-hidden="true">⌘</span>
-            <div class="field-copy"><h3>طراحی و توسعهٔ وب</h3><p>طراحی و توسعهٔ وب‌سایت و وب‌اپلیکیشن، با توجه به ساختار رابط کاربری، کارایی و تجربهٔ استفاده.</p></div>
+            <div class="field-copy">
+              <h3>طراحی و توسعهٔ وب</h3>
+              <p>طراحی و توسعهٔ وب‌سایت و وب‌اپلیکیشن، با توجه به ساختار رابط کاربری، کارایی و تجربهٔ استفاده.</p>
+            </div>
             <span class="field-arrow" aria-hidden="true">↙</span>
           </article>
+
           <article class="field-card reveal">
             <span class="field-num">۰۳</span>
             <span class="field-icon bot-icon" aria-hidden="true">▣</span>
-            <div class="field-copy"><h3>ربات و سامانه‌های اختصاصی</h3><p>طراحی و پیاده‌سازی ربات و سامانه‌های اختصاصی برای پلتفرم‌هایی مانند Telegram، Rubika، Discord و WhatsApp.</p></div>
+            <div class="field-copy">
+              <h3>ربات و سامانه‌های اختصاصی</h3>
+              <p>طراحی و پیاده‌سازی ربات و سامانه‌های اختصاصی برای پلتفرم‌هایی مانند Telegram، Rubika، Discord و WhatsApp.</p>
+            </div>
             <span class="field-arrow" aria-hidden="true">↙</span>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- Collaborations -->
     <section class="content-section collaborations-section" id="collaborations" data-lazy-script="scripts/collaborations.js">
       <div class="container">
         <div class="section-layout collaborations-heading">
@@ -225,17 +262,22 @@
             <span class="section-label-line"></span>
             <span>همکاری‌ها</span>
           </div>
+
           <div class="section-body reveal">
             <p class="section-eyebrow">همکاری‌ها</p>
             <h2>همکاری‌ها</h2>
           </div>
         </div>
+
         <p class="repo-status" id="collab-status" role="status" aria-live="polite" data-empty-message="موردی برای نمایش ثبت نشده است." data-error-message="بارگذاری اطلاعات همکاری‌ها با خطا روبه‌رو شد.">در حال بارگذاری اطلاعات همکاری‌ها…</p>
+
         <div class="collab-disclosure">
           <div class="collab-grid" id="collab-grid" aria-label="همکاری‌ها"></div>
+
           <button type="button" class="disclosure-toggle" id="collab-toggle" aria-expanded="false" aria-controls="collab-content" aria-label="مشاهدهٔ همکاری‌های بیشتر" hidden>
             <svg class="disclosure-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="m3 6 5 5 5-5"/></svg>
           </button>
+
           <div class="disclosure-content collab-content" id="collab-content" aria-hidden="true" inert>
             <div class="disclosure-inner">
               <div class="collab-grid collab-grid-more" id="collab-grid-more" aria-label="همکاری‌های بیشتر"></div>
@@ -245,6 +287,7 @@
       </div>
     </section>
 
+    <!-- GitHub Projects -->
     <section class="content-section github-section" id="github" data-lazy-script="scripts/github.js">
       <div class="container">
         <div class="section-layout github-heading">
@@ -253,20 +296,28 @@
             <span class="section-label-line"></span>
             <span>پروژه‌ها</span>
           </div>
+
           <div class="section-body reveal">
             <p class="section-eyebrow">گیت‌هاب</p>
             <h2>پروژه‌های گیت‌هاب</h2>
             <p class="section-hint">این بخش مخزن‌های عمومی مرتبط با حساب گیت‌هاب امیرحسام چناری را نمایش می‌دهد. فهرست بر اساس تعداد ستاره یا زمان به‌روزرسانی مرتب می‌شود و حداکثر ۹ مخزن در دسترس است.</p>
           </div>
         </div>
+
         <div class="github-toolbar reveal">
           <a class="github-profile" href="https://github.com/AmirhesamChenari" data-github-profile target="_blank" rel="noopener noreferrer">
             <span class="github-profile-copy">
-              <strong class="github-profile-name"><span data-github-username>AmirhesamChenari</span><svg class="github-profile-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.27-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.04 1.78 2.73 1.27 3.4.97.1-.75.41-1.27.74-1.56-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.2-3.1-.12-.3-.52-1.47.11-3.06 0 0 .98-.31 3.2 1.18a11.1 11.1 0 0 1 5.82 0c2.22-1.5 3.2-1.18 3.2-1.18.63 1.59.23 2.76.11 3.06.75.81 1.2 1.84 1.2 3.1 0 4.43-2.69 5.4-5.25 5.69.42.36.79 1.06.79 2.14 0 1.55-.01 2.8-.01 3.18 0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg></strong>
+              <strong class="github-profile-name">
+                <span data-github-username>AmirhesamChenari</span>
+                <svg class="github-profile-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.27-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.04 1.78 2.73 1.27 3.4.97.1-.75.41-1.27.74-1.56-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.2-3.1-.12-.3-.52-1.47.11-3.06 0 0 .98-.31 3.2 1.18a11.1 11.1 0 0 1 5.82 0c2.22-1.5 3.2-1.18 3.2-1.18.63 1.59.23 2.76.11 3.06.75.81 1.2 1.84 1.2 3.1 0 4.43-2.69 5.4-5.25 5.69.42.36.79 1.06.79 2.14 0 1.55-.01 2.8-.01 3.18 0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/>
+                </svg>
+              </strong>
               <small>مشاهدهٔ صفحه در گیت‌هاب</small>
             </span>
             <span class="external-arrow" aria-hidden="true">↗</span>
           </a>
+
           <div class="repo-toolbar-actions">
             <span class="repo-source">دریافت اطلاعات از GitHub</span>
             <button class="repo-refresh" id="repo-refresh" type="button" aria-label="به‌روزرسانی فهرست مخزن‌ها">
@@ -275,25 +326,35 @@
             </button>
           </div>
         </div>
+
         <div class="repo-panel">
           <p class="repo-status" id="repo-status" role="status" aria-live="polite" data-loading-message="در حال دریافت فهرست مخزن‌ها از گیت‌هاب…" data-empty-message="مخزن عمومی‌ای برای نمایش یافت نشد." data-error-message="دریافت فهرست مخزن‌ها با خطا روبه‌رو شد. مراجعه به صفحهٔ گیت‌هاب امکان‌پذیر است.">در حال دریافت فهرست مخزن‌ها از گیت‌هاب…</p>
+
           <div class="repo-sorter" id="repo-sorter" role="group" aria-label="مرتب‌سازی مخزن‌ها" hidden>
             <button type="button" class="repo-sort-button" data-repo-sort="stars" aria-pressed="true">بیشترین ستاره</button>
             <button type="button" class="repo-sort-button" data-repo-sort="recent" aria-pressed="false">جدیدترین‌ها</button>
           </div>
+
           <div class="repo-grid" id="repo-grid" aria-label="مخزن‌های عمومی گیت‌هاب" data-description-fallback="توضیحی برای این مخزن ثبت نشده است."></div>
+
           <button type="button" class="disclosure-toggle repo-toggle" id="repo-toggle" aria-expanded="false" aria-controls="repo-content" aria-label="مشاهدهٔ مخزن‌های بیشتر" hidden>
             <svg class="disclosure-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="m3 6 5 5 5-5"/></svg>
           </button>
+
           <div class="disclosure-content repo-content" id="repo-content" aria-hidden="true" inert>
             <div class="disclosure-inner">
               <div class="repo-grid repo-grid-more" id="repo-grid-more" aria-label="مخزن‌های بیشتر"></div>
             </div>
           </div>
         </div>
-        <noscript><p class="repo-status">برای بارگذاری فهرست مخزن‌ها، JavaScript باید فعال باشد. اطلاعات بیشتر در <a href="https://github.com/AmirhesamChenari" target="_blank" rel="noopener noreferrer">صفحهٔ گیت‌هاب</a> در دسترس است.</p></noscript>
+
+        <noscript>
+          <p class="repo-status">برای بارگذاری فهرست مخزن‌ها، JavaScript باید فعال باشد. اطلاعات بیشتر در <a href="https://github.com/AmirhesamChenari" target="_blank" rel="noopener noreferrer">صفحهٔ گیت‌هاب</a> در دسترس است.</p>
+        </noscript>
+      </div>
     </section>
 
+    <!-- Contact -->
     <section class="contact-section" id="contact" data-lazy-script="scripts/contact.js">
       <div class="container contact-panel reveal">
         <div class="section-label">
@@ -301,10 +362,12 @@
           <span class="section-label-line"></span>
           <span>ارتباط</span>
         </div>
+
         <div class="contact-main">
           <p class="section-eyebrow">شبکه‌های اجتماعی</p>
           <h2>راه‌های ارتباطی<span class="accent-dot">.</span></h2>
         </div>
+
         <div class="contact-socials" aria-label="پیوندهای شبکه‌های اجتماعی و ایمیل">
           <a class="social-card" href="https://t.me/taghdir_me" data-social-url="telegram" target="_blank" rel="noopener noreferrer">
             <span class="social-icon telegram-icon" aria-hidden="true">
@@ -313,6 +376,7 @@
             <span class="social-details"><strong>Telegram</strong><small data-social-username="telegram" dir="ltr">@taghdir_me</small></span>
             <span class="social-arrow" aria-hidden="true">↗</span>
           </a>
+
           <a class="social-card" href="https://www.instagram.com/taghdir.me/" data-social-url="instagram" target="_blank" rel="noopener noreferrer">
             <span class="social-icon instagram-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle class="instagram-flash" cx="17.5" cy="6.8" r="1"/></svg>
@@ -320,6 +384,7 @@
             <span class="social-details"><strong>Instagram</strong><small data-social-username="instagram" dir="ltr">@taghdir.me</small></span>
             <span class="social-arrow" aria-hidden="true">↗</span>
           </a>
+
           <a class="social-card" href="https://wa.me/taghdir_me" data-social-url="whatsapp" target="_blank" rel="noopener noreferrer">
             <span class="social-icon whatsapp-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.3-4.7a8.5 8.5 0 1 1 16.2-4.1Z"/><path d="M8.3 7.7c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.8 1.8c.1.2.1.4 0 .6l-.6.7c-.2.2-.2.4-.1.6.7 1.2 1.6 2.1 2.8 2.7.2.1.4.1.6-.1l.8-.9c.2-.2.4-.2.7-.1l1.7.8c.3.1.4.3.4.5 0 .3-.2 1.1-.7 1.5-.5.5-1.2.7-2 .6-1.9-.3-3.8-1.4-5.3-2.9-1.4-1.5-2.2-3.1-2.3-4.4-.1-.8.3-1.4.7-1.8Z"/></svg>
@@ -327,6 +392,7 @@
             <span class="social-details"><strong>WhatsApp</strong><small data-social-username="whatsapp" dir="ltr">@taghdir_me</small></span>
             <span class="social-arrow" aria-hidden="true">↗</span>
           </a>
+
           <a class="social-card" href="https://mail.google.com/mail/" data-contact-email>
             <span class="social-icon email-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
@@ -335,6 +401,7 @@
             <span class="social-arrow" aria-hidden="true">↗</span>
           </a>
         </div>
+
         <div class="contact-copy">
           <button class="copy-button" type="button">
             <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="7" y="7" width="10" height="11" rx="2"/><path d="M13 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>
@@ -342,11 +409,15 @@
           </button>
           <span class="copy-feedback" role="status" aria-live="polite"></span>
         </div>
-        <div class="contact-bottom"><a href="#home">بازگشت به ابتدای صفحه <span aria-hidden="true">↑</span></a></div>
+
+        <div class="contact-bottom">
+          <a href="#home">بازگشت به ابتدای صفحه <span aria-hidden="true">↑</span></a>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="footer" data-lazy-script="scripts/footer.js">
     <div class="container footer-inner">
       <div class="footer-main">
@@ -354,12 +425,14 @@
           <span>taghdir <b>me</b></span>
           <small>امیرحسام چناری</small>
         </a>
+
         <nav class="footer-links" aria-label="پیوندهای پایانی">
           <a href="#about">درباره</a>
           <a href="#github">پروژه‌ها</a>
           <a href="#contact">ارتباط</a>
         </nav>
       </div>
+
       <div class="footer-bottom">
         <span class="footer-copyright"><span dir="ltr">© <span id="year">۲۰۲۶</span></span> امیرحسام چناری</span>
       </div>

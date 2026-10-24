@@ -1,3 +1,4 @@
+
 (() => {
   "use strict";
 
@@ -6,9 +7,11 @@
   const collabStatus = document.querySelector("#collab-status");
   const collabToggle = document.querySelector("#collab-toggle");
   const collabContent = document.querySelector("#collab-content");
+
   const numberFormatter = new Intl.NumberFormat("fa-IR", {
     minimumIntegerDigits: 2
   });
+
   const countFormatter = new Intl.NumberFormat("fa-IR");
 
   function appendText(parent, tagName, className, text) {
@@ -20,36 +23,101 @@
   }
 
   function setCollaborationListExpanded(expanded) {
-    const remainingCount = collabGridMore.querySelectorAll(".collab-card").length;
+    const remainingCount =
+      collabGridMore.querySelectorAll(".collab-card").length;
+
     collabToggle.setAttribute("aria-expanded", String(expanded));
+
     collabToggle.setAttribute(
       "aria-label",
       expanded
         ? "بستن فهرست همکاری‌های بیشتر"
         : `مشاهدهٔ ${countFormatter.format(remainingCount)} همکاری دیگر`
     );
+
     collabContent.setAttribute("aria-hidden", String(!expanded));
     collabContent.classList.toggle("is-open", expanded);
     collabContent.inert = !expanded;
   }
 
   collabToggle?.addEventListener("click", () => {
-    const expanded = collabToggle.getAttribute("aria-expanded") !== "true";
+    const expanded =
+      collabToggle.getAttribute("aria-expanded") !== "true";
+
     setCollaborationListExpanded(expanded);
   });
 
   function safeUrl(value) {
-    if (typeof value !== "string" || !value.trim()) return "";
+    if (typeof value !== "string" || !value.trim()) {
+      return "";
+    }
+
     const url = value.trim();
-    if (url.startsWith("/") && !url.startsWith("//")) return url;
-    if (url.startsWith("#")) return url;
+
+    if (url.startsWith("/") && !url.startsWith("//")) {
+      return url;
+    }
+
+    if (url.startsWith("#")) {
+      return url;
+    }
 
     try {
       const parsedUrl = new URL(url, window.location.href);
-      return parsedUrl.protocol === "http:" || parsedUrl.protocol === "https:" ? url : "";
+
+      return parsedUrl.protocol === "http:" ||
+        parsedUrl.protocol === "https:"
+        ? url
+        : "";
     } catch {
       return "";
     }
+  }
+
+  function renderCollaborationDescription(parent, description) {
+    const container = document.createElement("div");
+    container.className = "collab-description";
+
+    if (
+      typeof window.marked === "undefined" ||
+      typeof window.DOMPurify === "undefined"
+    ) {
+      container.textContent = description;
+      parent.append(container);
+      return;
+    }
+
+    const html = window.marked.parse(description, {
+      async: false,
+      breaks: true,
+      gfm: true
+    });
+
+    container.innerHTML = window.DOMPurify.sanitize(html, {
+      USE_PROFILES: {
+        html: true
+      }
+    });
+
+    container.querySelectorAll("a").forEach((link) => {
+      const url = safeUrl(link.getAttribute("href"));
+
+      if (!url) {
+        link.replaceWith(
+          document.createTextNode(link.textContent || "")
+        );
+        return;
+      }
+
+      link.href = url;
+
+      if (/^https?:\/\//i.test(url)) {
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+      }
+    });
+
+    parent.append(container);
   }
 
   function renderCollaboration(collaboration, index, targetGrid) {
@@ -58,92 +126,168 @@
 
     const top = document.createElement("div");
     top.className = "collab-card-top";
+
     appendText(
       top,
       "span",
       "collab-card-index",
       `همکاری شمارهٔ ${numberFormatter.format(index + 1)}`
     );
+
     card.append(top);
 
     const photoUrl = safeUrl(collaboration.photo);
+
     if (photoUrl) {
       const photo = document.createElement("img");
+
       photo.className = "collab-photo";
       photo.alt = collaboration.name;
       photo.loading = "lazy";
-      photo.addEventListener("error", () => photo.remove(), { once: true });
+
+      photo.addEventListener(
+        "error",
+        () => photo.remove(),
+        { once: true }
+      );
+
       photo.src = photoUrl;
       card.append(photo);
     }
 
-    const nameHeading = appendText(card, "h3", "collab-name", "");
+    const nameHeading = appendText(
+      card,
+      "h3",
+      "collab-name",
+      collaboration.name
+    );
+
     const linkUrl = safeUrl(collaboration.link);
-    nameHeading.textContent = collaboration.name;
+
     if (linkUrl) {
-      const clickHint = appendText(nameHeading, "a", "card-click-hint", "مشاهدهٔ پیوند");
+      const clickHint = appendText(
+        nameHeading,
+        "a",
+        "card-click-hint",
+        "مشاهدهٔ پیوند"
+      );
+
       clickHint.href = linkUrl;
+
       if (/^https?:\/\//i.test(linkUrl)) {
         clickHint.target = "_blank";
         clickHint.rel = "noopener noreferrer";
       }
-      clickHint.setAttribute("aria-label", `مشاهده ${collaboration.name}`);
+
+      clickHint.setAttribute(
+        "aria-label",
+        `مشاهده ${collaboration.name}`
+      );
     }
 
-    if (typeof collaboration.description === "string" && collaboration.description.trim()) {
-      appendText(card, "p", "collab-description", collaboration.description.trim());
+    if (
+      typeof collaboration.description === "string" &&
+      collaboration.description.trim()
+    ) {
+      renderCollaborationDescription(
+        card,
+        collaboration.description.trim()
+      );
     }
 
     targetGrid.append(card);
   }
 
   async function loadCollaborations() {
-    if (!collabGrid || !collabGridMore || !collabStatus || !collabToggle || !collabContent) return;
+    if (
+      !collabGrid ||
+      !collabGridMore ||
+      !collabStatus ||
+      !collabToggle ||
+      !collabContent
+    ) {
+      return;
+    }
 
     try {
       const response = await fetch("./collaborations.json");
+
       if (!response.ok) {
-        throw new Error(`Collaboration data request failed with ${response.status}`);
+        throw new Error(
+          `Collaboration data request failed with ${response.status}`
+        );
       }
 
       const data = await response.json();
-      if (!data || typeof data !== "object" || Array.isArray(data)) {
-        throw new Error("Collaboration data must be a JSON object.");
+
+      if (
+        !data ||
+        typeof data !== "object" ||
+        Array.isArray(data)
+      ) {
+        throw new Error(
+          "Collaboration data must be a JSON object."
+        );
       }
 
-      const collaborations = Object.values(data).filter((item) =>
-        item &&
-        typeof item === "object" &&
-        item.enabled !== false &&
-        typeof item.name === "string" &&
-        item.name.trim()
+      const collaborations = Object.values(data).filter(
+        (item) =>
+          item &&
+          typeof item === "object" &&
+          item.enabled !== false &&
+          typeof item.name === "string" &&
+          item.name.trim()
       );
 
       if (collaborations.length === 0) {
         collabGrid.replaceChildren();
         collabGridMore.replaceChildren();
         collabToggle.hidden = true;
+
         setCollaborationListExpanded(false);
+
         collabStatus.classList.add("is-empty");
-        collabStatus.textContent = collabStatus.dataset.emptyMessage;
+        collabStatus.textContent =
+          collabStatus.dataset.emptyMessage;
+
         return;
       }
 
       collabStatus.classList.remove("is-empty");
+
       collabGrid.replaceChildren();
       collabGridMore.replaceChildren();
+
       collaborations.forEach((collaboration, index) => {
-        renderCollaboration(collaboration, index, index < 6 ? collabGrid : collabGridMore);
+        renderCollaboration(
+          collaboration,
+          index,
+          index < 6 ? collabGrid : collabGridMore
+        );
       });
-      const remainingCount = Math.max(0, collaborations.length - 6);
+
+      const remainingCount = Math.max(
+        0,
+        collaborations.length - 6
+      );
+
       collabToggle.hidden = remainingCount === 0;
+
       setCollaborationListExpanded(false);
-      collabStatus.textContent = `${countFormatter.format(collaborations.length)} همکاری`;
+
+      collabStatus.textContent =
+        `${countFormatter.format(collaborations.length)} همکاری`;
     } catch (error) {
       collabStatus.classList.remove("is-empty");
+
       collabStatus.textContent =
-        collabStatus.dataset.errorMessage || "بارگذاری اطلاعات همکاری‌ها با خطا روبه‌رو شد.";
-      console.error("Could not load collaboration data:", error);
+        collabStatus.dataset.errorMessage ||
+        "بارگذاری اطلاعات همکاری‌ها با خطا روبه‌رو شد.";
+
+      console.error(
+        "Could not load collaboration data:",
+        error
+      );
     }
   }
 

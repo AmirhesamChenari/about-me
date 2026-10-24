@@ -1,9 +1,9 @@
 {
   "Ramtin-yang": {
-    "enabled": false,
-    "name": "Ramtin-yang",
-    "description": "تولید محتوای آموزشی و سرگرمی در زمینه برنامه نویسی و تکنولوژی",
+    "enabled": true,
+    "name": "Ramtin Yang",
+    "description": "یکی از پروژه‌های انجام‌شده با همکاری **رامتین یانگ**، طراحی و توسعه وب‌سایت رسمی **شایان یو (Shayan Yo)** است.\n\n---\n\nاین وب‌سایت به‌عنوان بستری اختصاصی برای معرفی هنرمند و گردآوری لینک‌های رسمی او ایجاد شده است. در این مجموعه، مخاطبان می‌توانند به آثار موسیقی و صفحات رسمی شایان یو در پلتفرم‌های مختلف دسترسی داشته باشند.\n\n**🌐 پروژه نهایی:** [مشاهده وب‌سایت رسمی Shayan Yo ↗](https://shayan-yo.ir/)",
     "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR14SNPLoT5tDTjxZzSKiFwQ_7vJooXNBx0A5d5OTVGgQ&s=10",
-    "link": "https://ramtinyang.ir"
+    "link": "https://t.me/ramtin_yang"
   }
 }
